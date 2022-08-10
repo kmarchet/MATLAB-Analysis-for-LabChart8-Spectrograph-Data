@@ -93,25 +93,7 @@ hold off
 %Wave Summary Print
 WaveCountsAll = table({'Number of Alpha';'Number of Beta';'Number of Delta';'Number of Gamma';'Number of Theta'},[numOfAlphaWaves;numOfBetaWaves;numOfDeltaWaves;numOfGammaWaves;numOfThetaWaves]);
 writetable(WaveCountsAll);
-%type 'How many of each wave.txt';
 
-%B = table({'Alpha Power';'Beta Power';'Delta Power';'Gamma Power';'Theta Power'},[alphaYMax;betaYMax;deltaYMax;gammaYMax;thetaYMax]);
-%writetable(B);
-%type 'WavePower.txt';
-%totar = table(alphaYMax, betaYMax, deltaYMax, gammaYMax, thetaYMax);
-
-%B = csvwrite({'Alpha Power','Beta Power','Delta Power','Gamma Power','Theta Power'},[alphaYMax],[betaYMax],[deltaYMax],[gammaYMax],[thetaYMax]);
-%writetable(B);
-
-
-%cellz = {'Alpha Power','Beta Power','Delta Power','Gamma Power','Theta Power'; alphaYMax,betaYMax,deltaYMax,gammaYMax,thetaYMax};
-%B = cell2table(cellz);
-%writetable(B,'Power Summary.csv')
-
-%AlphaPower = transpose(alphaYMax);
-%AlphaPowerTransposed = transpose(AlphaPower);
-%writematrix(AlphaPower);
-%AlphaPower = table({'Alpha Peak Power', [alphaYMax]});
 AlphaPower = array2table(alphaYMax);
 writetable(AlphaPower);
 
@@ -127,7 +109,5 @@ writetable(GammaPower);
 ThetaPower =  array2table(thetaYMax);
 writetable(ThetaPower);
 
-%complete = outerjoin(AlphaPower, BetaPower, DeltaPower, GammaPower, ThetaPower);
-%writetable(complete);
-%PowerSummary = join(AlphaPower, BetaPower, DeltaPower, GammaPower, ThetaPower);
+
 
